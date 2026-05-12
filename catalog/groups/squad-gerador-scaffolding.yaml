@@ -1,0 +1,10 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: squad-gerador-scaffolding
+  title: Squad Gerador Scaffolding
+  description: Time focado em templates, scaffolder e fluxos de geração de software.
+spec:
+  type: team
+  children: []

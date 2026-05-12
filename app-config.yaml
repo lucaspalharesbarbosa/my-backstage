@@ -135,6 +135,28 @@ catalog:
       rules:
         - allow: [User, Group]
 
+    # Squads (one Group per file under catalog/groups/)
+    - type: file
+      target: ../../catalog/groups/squad-gerador-scaffolding.yaml
+      rules:
+        - allow: [Group]
+    - type: file
+      target: ../../catalog/groups/squad-arquitetura.yaml
+      rules:
+        - allow: [Group]
+    - type: file
+      target: ../../catalog/groups/squad-seguranca.yaml
+      rules:
+        - allow: [Group]
+    - type: file
+      target: ../../catalog/groups/squad-observabilidade-sre.yaml
+      rules:
+        - allow: [Group]
+    - type: file
+      target: ../../catalog/groups/squad-super-rag.yaml
+      rules:
+        - allow: [Group]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
