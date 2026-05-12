@@ -1,0 +1,11 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-domain
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: claro-ia-corporativa
+  title: Claro IA Corporativa
+  description: >-
+    SUPERAG, insumos para modelos, governança e compliance de uso de LLM
+    em capacidades corporativas.
+spec:
+  owner: group:default/squad-super-rag

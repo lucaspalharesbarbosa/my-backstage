@@ -1,0 +1,11 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-domain
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: claro-idp
+  title: Claro IDP
+  description: >-
+    Plataforma interna para desenvolvedores — Backstage, catálogo de software,
+    automações e experiência de self-service.
+spec:
+  owner: group:default/squad-gerador-scaffolding

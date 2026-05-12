@@ -157,6 +157,24 @@ catalog:
       rules:
         - allow: [Group]
 
+    # Domains (one Domain per file under catalog/domains/)
+    - type: file
+      target: ../../catalog/domains/claro-idp.yaml
+      rules:
+        - allow: [Domain]
+    - type: file
+      target: ../../catalog/domains/claro-digital-engenharia.yaml
+      rules:
+        - allow: [Domain]
+    - type: file
+      target: ../../catalog/domains/claro-ia-corporativa.yaml
+      rules:
+        - allow: [Domain]
+    - type: file
+      target: ../../catalog/domains/claro-seguranca-observabilidade.yaml
+      rules:
+        - allow: [Domain]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

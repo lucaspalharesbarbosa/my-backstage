@@ -1,0 +1,11 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-domain
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: claro-seguranca-observabilidade
+  title: Claro Segurança e Observabilidade
+  description: >-
+    Identidade, API gateway, mTLS, métricas, tracing, logging e auditoria —
+    superfícies compartilhadas de segurança e operação.
+spec:
+  owner: group:default/squad-seguranca

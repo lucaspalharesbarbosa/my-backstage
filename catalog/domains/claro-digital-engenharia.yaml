@@ -1,0 +1,11 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-domain
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: claro-digital-engenharia
+  title: Claro Digital Engenharia
+  description: >-
+    Área digital e esteira padrão — produtos digitais, pipelines de entrega
+    e práticas de engenharia alinhadas ao negócio.
+spec:
+  owner: group:default/squad-arquitetura
