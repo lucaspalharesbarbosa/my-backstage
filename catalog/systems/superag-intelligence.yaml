@@ -1,0 +1,12 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: superag-intelligence
+  title: SUPERAG Intelligence
+  description: >-
+    SUPERAG — integração por APIs, exposição de capacidades de IA para
+    produtos e canais corporativos.
+spec:
+  owner: group:default/squad-super-rag
+  domain: domain:default/claro-ia-corporativa

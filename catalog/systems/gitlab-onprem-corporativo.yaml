@@ -1,0 +1,12 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-system
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: gitlab-onprem-corporativo
+  title: GitLab on‑prem corporativo
+  description: >-
+    GitLab on‑premises corporativo — repositórios, merge requests e repositórios
+    gerados pelo ecossistema de plataforma.
+spec:
+  owner: group:default/squad-gerador-scaffolding
+  domain: domain:default/claro-idp

@@ -175,6 +175,48 @@ catalog:
       rules:
         - allow: [Domain]
 
+    # Systems (one System per file under catalog/systems/)
+    - type: file
+      target: ../../catalog/systems/gerador-scaffolding.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/superag-intelligence.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/apigee-x-gateway.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/ping-identify-wiam.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/camunda-zeebe-8.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/backstage-digital-aws.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/backstage-ti-onprem.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/gitlab-onprem-corporativo.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/esteiras-cicd-claro.yaml
+      rules:
+        - allow: [System]
+    - type: file
+      target: ../../catalog/systems/aws-runtime-gerador-scaffolding.yaml
+      rules:
+        - allow: [System]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
