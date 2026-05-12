@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rds-postgresql-gerador
+  title: RDS PostgreSQL — Gerador
+  description: >-
+    PostgreSQL gerenciado (Amazon RDS) — dados da aplicação e trilhas
+    operacionais; um único recurso no catálogo (sem separar write/read).
+spec:
+  type: database
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

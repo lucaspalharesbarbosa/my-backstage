@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cloudfront-distribution-admin-panel
+  title: CloudFront — CDN Admin Panel
+  description: >-
+    Distribuição Amazon CloudFront na frente do bucket S3 estático do Admin
+    Panel (HTTPS, cache de borda, WAF quando aplicável).
+spec:
+  type: cdn
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: s3-bucket-artefatos-logs
+  title: S3 — artefatos, logs e backups
+  description: >-
+    Bucket S3 para artefatos de build, logs exportados, backups operacionais
+    e ficheiros de suporte ao ciclo de vida do Gerador.
+spec:
+  type: s3-bucket
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

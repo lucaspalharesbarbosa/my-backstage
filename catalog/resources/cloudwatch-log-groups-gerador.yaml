@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cloudwatch-log-groups-gerador
+  title: CloudWatch Log Groups — Gerador
+  description: >-
+    Grupos de log Amazon CloudWatch — agregação e retenção de logs das
+    aplicações e da plataforma do Gerador.
+spec:
+  type: logging
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

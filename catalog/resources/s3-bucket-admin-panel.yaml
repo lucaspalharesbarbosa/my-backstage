@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: s3-bucket-admin-panel
+  title: S3 — bucket estático Admin Panel
+  description: >-
+    Bucket S3 com conteúdo estático do Admin Panel (site ou bundle servido
+    atrás de CDN).
+spec:
+  type: s3-bucket
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

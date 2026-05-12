@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: eks-cluster-gerador-scaffolding
+  title: EKS — cluster Gerador de Scaffolding
+  description: >-
+    Cluster Amazon EKS onde correm workloads do Gerador (APIs, workers,
+    controladores e integrações na nuvem).
+spec:
+  type: kubernetes-cluster
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

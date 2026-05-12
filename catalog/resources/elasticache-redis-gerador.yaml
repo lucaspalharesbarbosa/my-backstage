@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: elasticache-redis-gerador
+  title: ElastiCache Redis — Gerador
+  description: >-
+    Redis gerenciado (ElastiCache) — cache e/ou sessões conforme desenho da
+    aplicação do Gerador.
+spec:
+  type: redis
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

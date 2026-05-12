@@ -217,6 +217,56 @@ catalog:
       rules:
         - allow: [System]
 
+    # Resources — Gerador (one Resource per file under catalog/resources/)
+    - type: file
+      target: ../../catalog/resources/rds-postgresql-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/elasticache-redis-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/eks-cluster-gerador-scaffolding.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/s3-bucket-admin-panel.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/s3-bucket-artefatos-logs.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/ecr-gerador-scaffolding.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/aws-secrets-manager-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/aws-managed-prometheus-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/cloudwatch-log-groups-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/aws-xray-tracing-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/managed-grafana-workspace-gerador.yaml
+      rules:
+        - allow: [Resource]
+    - type: file
+      target: ../../catalog/resources/cloudfront-distribution-admin-panel.yaml
+      rules:
+        - allow: [Resource]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

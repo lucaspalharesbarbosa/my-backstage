@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aws-xray-tracing-gerador
+  title: AWS X-Ray — Gerador
+  description: >-
+    AWS X-Ray — rastreamento distribuído de pedidos entre serviços do Gerador.
+spec:
+  type: tracing
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

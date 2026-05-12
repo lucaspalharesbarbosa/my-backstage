@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ecr-gerador-scaffolding
+  title: ECR — registro de imagens Gerador
+  description: >-
+    Amazon ECR — registro de imagens de container usadas pelo Gerador de
+    Scaffolding e pipelines de entrega.
+spec:
+  type: oci-registry
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

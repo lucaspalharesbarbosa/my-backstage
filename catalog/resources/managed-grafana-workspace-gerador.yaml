@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: managed-grafana-workspace-gerador
+  title: Amazon Managed Grafana — Gerador
+  description: >-
+    Workspace Amazon Managed Grafana — dashboards operacionais e painéis
+    partilhados pela equipa do Gerador.
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

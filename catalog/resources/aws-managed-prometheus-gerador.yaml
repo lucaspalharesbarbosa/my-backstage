@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-resource
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aws-managed-prometheus-gerador
+  title: Amazon Managed Prometheus — Gerador
+  description: >-
+    Amazon Managed Service for Prometheus — métricas gerenciadas para cargas
+    do Gerador na AWS.
+spec:
+  type: prometheus
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding
