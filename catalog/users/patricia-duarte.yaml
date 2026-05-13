@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: patricia-duarte
+  title: Chapter Lead — plataforma para desenvolvedores
+spec:
+  profile:
+    displayName: Patrícia Duarte
+    email: patricia.duarte@plataforma.interno
+  memberOf:
+    - group:default/squad-arquitetura
+    - group:default/squad-gerador-scaffolding

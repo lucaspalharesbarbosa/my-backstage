@@ -1,0 +1,12 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: juliana-cardoso
+  title: Security Engineer — identidade e gateway
+spec:
+  profile:
+    displayName: Juliana Cardoso
+    email: juliana.cardoso@seguranca.interno
+  memberOf:
+    - group:default/squad-seguranca
