@@ -1,0 +1,41 @@
+# Camunda Tasklist / Operate — API embutida (aprovações no Admin)
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: camunda-tasklist-or-operate
+  title: Camunda Tasklist / Operate — API
+  description: >-
+    Superfície REST usada de forma embutida no Admin Panel para aprovações
+    e consulta de instâncias (Tasklist e/ou Operate — subconjunto ilustrativo).
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/camunda-zeebe-8
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Camunda Tasklist / Operate (subset UI)
+      version: "1.0.0"
+    servers:
+      - url: https://tasklist.example.com
+    paths:
+      /v1/tasks/search:
+        post:
+          summary: Pesquisar tarefas humanas (aprovações)
+          responses:
+            "200":
+              description: Lista de tarefas
+      /v1/tasks/{id}/complete:
+        post:
+          summary: Completar tarefa (aprovação / rejeição)
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "204":
+              description: Tarefa concluída

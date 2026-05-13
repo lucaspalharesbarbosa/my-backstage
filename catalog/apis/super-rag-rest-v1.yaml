@@ -1,0 +1,56 @@
+# SUPERAG / Super RAG — superfície HTTP
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: super-rag-rest-v1
+  title: Super RAG — REST v1
+  description: >-
+    Endpoints SUPERAG / Super Rag — contexto, geração assistida, compliance,
+    retry/explicabilidade e ingestão de insumos.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-super-rag
+  system: system:default/superag-intelligence
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Super RAG REST v1
+      version: "1.0.0"
+    paths:
+      /context/resolve:
+        post:
+          operationId: super-rag-context-resolve
+          summary: Resolver contexto para prompts / RAG
+          responses:
+            "200":
+              description: Contexto resolvido
+      /generation/assist:
+        post:
+          operationId: super-rag-generation-assist
+          summary: Assistência à geração
+          responses:
+            "200":
+              description: Sugestão ou continuação de geração
+      /compliance/check:
+        post:
+          operationId: super-rag-compliance-check
+          summary: Verificação de compliance (LLM / políticas)
+          responses:
+            "200":
+              description: Resultado da verificação
+      /retry/explain:
+        post:
+          operationId: super-rag-retry-explain
+          summary: Retry com explicabilidade
+          responses:
+            "200":
+              description: Explicação e novo intento
+      /insumos/ingest:
+        post:
+          operationId: super-rag-insumos-ingest
+          summary: Ingestão de insumos corporativos
+          responses:
+            "202":
+              description: Ingestão aceite

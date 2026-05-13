@@ -1,0 +1,34 @@
+# Ping Identify — metadados OIDC (well-known)
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: ping-oidc-provider-metadata
+  title: Ping Identify — OIDC discovery
+  description: >-
+    Metadados OIDC (well-known) para integração do front e clientes —
+    issuer, JWKS e endpoints de autorização/token.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-seguranca
+  system: system:default/ping-identify-wiam
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: OIDC Provider Metadata (Ping)
+      version: "1.0.0"
+    servers:
+      - url: https://auth.example.com
+    paths:
+      /.well-known/openid-configuration:
+        get:
+          operationId: ping-oidc-provider-metadata
+          summary: OpenID Provider Configuration
+          responses:
+            "200":
+              description: Documento de descoberta OIDC
+              content:
+                application/json:
+                  schema:
+                    type: object

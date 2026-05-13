@@ -1,0 +1,36 @@
+# Backstage Catalog Backend — API de catálogo
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: backstage-catalog-backend
+  title: Backstage — Catalog Backend API
+  description: >-
+    API do plugin de catálogo (registo de locations, entidades). Usada pelo
+    fluxo backstage-catalog-registrar (catalogApi.addLocation).
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/backstage-digital-aws
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Backstage Catalog Backend (subset)
+      version: "1.0.0"
+      description: >
+        Endpoints ilustrativos expostos pelo backend do catálogo; rotas reais
+        dependem da versão do Backstage e da configuração de plugins.
+    paths:
+      /catalog/entities:
+        get:
+          summary: Listar / filtrar entidades
+          responses:
+            "200":
+              description: Lista de entidades
+      /catalog/locations:
+        post:
+          summary: Registar nova location
+          responses:
+            "201":
+              description: Location registada

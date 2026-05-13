@@ -1,0 +1,35 @@
+# SonarQube Web API (validação / quality gate)
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: sonarqube-web-api
+  title: SonarQube — Web API
+  description: >-
+    Superfície Web API do SonarQube usada na fase de validação (métricas,
+    issues, quality gates). Subconjunto representativo.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: SonarQube Web API (subset validação)
+      version: "1.0.0"
+    servers:
+      - url: https://sonarqube.example.com
+    paths:
+      /api/issues/search:
+        get:
+          summary: Pesquisar issues (validação)
+          responses:
+            "200":
+              description: Resultado da pesquisa
+      /api/qualitygates/project_status:
+        get:
+          summary: Estado do quality gate do projeto
+          responses:
+            "200":
+              description: PASS / WARN / ERROR

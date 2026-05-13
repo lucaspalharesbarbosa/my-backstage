@@ -1,0 +1,45 @@
+# GitLab REST API v4 (superfície usada pelos workers)
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: gitlab-rest-api-v4
+  title: GitLab — REST API v4
+  description: >-
+    Contrato de referência da REST GitLab v4 utilizada pelos workers
+    (MR, repositórios, ficheiros, catalog-info). Subconjunto representativo;
+    a superfície completa segue a documentação GitLab.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gitlab-onprem-corporativo
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: GitLab REST API v4 (subset operacional)
+      version: "v4"
+      description: >
+        Endpoints típicos invocados por git-publish-worker e automações;
+        prefixo /api/v4.
+    servers:
+      - url: https://gitlab.example.com/api/v4
+    paths:
+      /projects:
+        get:
+          summary: Listar projetos (exemplo)
+          responses:
+            "200":
+              description: Lista de projetos
+      /projects/{id}/merge_requests:
+        post:
+          summary: Criar merge request (exemplo)
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "201":
+              description: MR criado

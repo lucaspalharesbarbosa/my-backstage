@@ -1,0 +1,35 @@
+# Grafana — HTTP API (painel embutido / custo)
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: grafana-http-api-embedded
+  title: Grafana — HTTP API (embutido)
+  description: >-
+    Uso embutido da HTTP API do Grafana no painel (ex.: consultas a datasource,
+    dashboards de custo). Subconjunto representativo da API oficial Grafana.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Grafana HTTP API (subset embedded)
+      version: "1.0.0"
+    servers:
+      - url: https://grafana.example.com/api
+    paths:
+      /ds/query:
+        post:
+          summary: Executar query contra datasource (painel embutido)
+          responses:
+            "200":
+              description: Resultado da query
+      /search:
+        get:
+          summary: Pesquisar dashboards
+          responses:
+            "200":
+              description: Lista de dashboards

@@ -1,0 +1,29 @@
+# Admin Panel — autenticação
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: admin-panel-auth-api
+  title: Admin Panel — Auth API
+  description: >-
+    Endpoint de login do Admin Panel (SPA). Agrupa admin-panel-auth-login.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Admin Panel — Auth
+      version: "1.0.0"
+    paths:
+      /auth/login:
+        post:
+          operationId: admin-panel-auth-login
+          summary: Autenticação (login)
+          responses:
+            "200":
+              description: Sessão / token emitido
+            "401":
+              description: Credenciais inválidas

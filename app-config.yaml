@@ -385,6 +385,52 @@ catalog:
       rules:
         - allow: [Component]
 
+    # APIs (one file per logical surface; OpenAPI/gRPC groups endpoints)
+    - type: file
+      target: ../../catalog/apis/template-service-rest-v1.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/admin-panel-auth-api.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/super-rag-rest-v1.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/gitlab-rest-api-v4.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/sonarqube-web-api.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/camunda-zeebe-grpc.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/backstage-catalog-backend.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/apigee-public-proxy-contract.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/ping-oidc-provider-metadata.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/camunda-tasklist-or-operate.yaml
+      rules:
+        - allow: [API]
+    - type: file
+      target: ../../catalog/apis/grafana-http-api-embedded.yaml
+      rules:
+        - allow: [API]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

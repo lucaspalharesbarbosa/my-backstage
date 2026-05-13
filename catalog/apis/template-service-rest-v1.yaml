@@ -1,0 +1,59 @@
+# Superfície REST agregada (OpenAPI) exposta via Apigee — Template Service
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: template-service-rest-v1
+  title: Template Service — REST v1 (via Apigee)
+  description: >-
+    Contrato OpenAPI da superfície REST agregada atrás do ApiGee X — inclui
+    listagem de templates, disparo de geração e consulta de estado da saga.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Template Service REST v1
+      version: "1.0.0"
+      description: >
+        API pública agregada no gateway corporativo (Apigee). Operações de
+        template-service-get-templates, template-service-post-generate e
+        template-service-get-generation-status.
+    servers:
+      - url: https://api.example.com/template-service/v1
+        description: Base atrás do Apigee (exemplo)
+    paths:
+      /templates:
+        get:
+          operationId: template-service-get-templates
+          summary: Listar templates disponíveis
+          responses:
+            "200":
+              description: Lista de templates
+      /templates/generate:
+        post:
+          operationId: template-service-post-generate
+          summary: Disparar geração a partir de um template
+          responses:
+            "202":
+              description: Geração aceite; saga criada
+            "400":
+              description: Validação de entrada / RBAC
+      /sagas/{saga_id}/status:
+        get:
+          operationId: template-service-get-generation-status
+          summary: Estado da geração (saga)
+          parameters:
+            - name: saga_id
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: Estado atual da saga de geração
+            "404":
+              description: Saga desconhecida
