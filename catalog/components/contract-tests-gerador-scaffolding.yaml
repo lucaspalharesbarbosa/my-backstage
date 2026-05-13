@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: contract-tests-gerador-scaffolding
+  title: Contract tests — Gerador
+  description: >-
+    Testes de contrato entre serviços externos simulados e integrações reais.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

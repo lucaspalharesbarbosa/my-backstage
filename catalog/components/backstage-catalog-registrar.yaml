@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-catalog-registrar
+  title: Backstage catalog registrar
+  description: >-
+    Fluxo que invoca catalogApi.addLocation (ou equivalente) após geração para
+    registar entidades no catálogo.
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

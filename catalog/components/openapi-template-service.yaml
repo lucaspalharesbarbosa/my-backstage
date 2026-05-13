@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: openapi-template-service
+  title: OpenAPI — Template Service
+  description: >-
+    Especificação OpenAPI versionada da API pública do Template Service.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: validation-worker
+  title: Validation Worker
+  description: >-
+    Worker BPMN — build, testes, SAST, SonarQube e isolamento em container
+    no fluxo de validação.
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

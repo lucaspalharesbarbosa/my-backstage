@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cross-repo-update-automation
+  title: Cross-repo update automation
+  description: >-
+    Automação GitOps para atualização do live repo e reconciliação declarativa.
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

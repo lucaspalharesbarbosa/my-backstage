@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-eks-gerador
+  title: Terraform — EKS Gerador
+  description: >-
+    Infra-as-code do cluster EKS e bases de rede para o runtime do Gerador na AWS.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

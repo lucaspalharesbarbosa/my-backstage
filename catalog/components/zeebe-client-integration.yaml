@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: zeebe-client-integration
+  title: Zeebe client integration
+  description: >-
+    Cliente gRPC com mTLS para orquestração de processos no Zeebe corporativo.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

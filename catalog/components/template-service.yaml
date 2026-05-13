@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: template-service
+  title: Template Service
+  description: >-
+    API FastAPI — geração, validações de entrada, RBAC, orquestração com Camunda
+    e integrações corporativas.
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

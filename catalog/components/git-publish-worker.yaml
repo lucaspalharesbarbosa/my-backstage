@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: git-publish-worker
+  title: Git Publish Worker
+  description: >-
+    Worker BPMN — GitLab, merge requests, catalog-info.yaml e atualização
+    cross-repo após geração.
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: k8s-helm-charts-gerador
+  title: Helm charts — Gerador
+  description: >-
+    Charts Helm e manifests Kubernetes dos workloads do Gerador no EKS.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

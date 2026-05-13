@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: nexus-publish-pipeline-plugin
+  title: Nexus publish pipeline (plugin)
+  description: >-
+    Definição de pipeline para publicação do pacote Yarn do plugin no Nexus.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

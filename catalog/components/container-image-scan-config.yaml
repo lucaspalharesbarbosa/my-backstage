@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: container-image-scan-config
+  title: Container image scan — política
+  description: >-
+    Política e configuração de scan de imagem (Trivy, Grype e requisitos
+    corporativos).
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

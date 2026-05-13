@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-datastores-gerador
+  title: Terraform — datastores Gerador
+  description: >-
+    Infra-as-code de banco de dados, cache, buckets e rede associada ao Gerador.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/aws-runtime-gerador-scaffolding

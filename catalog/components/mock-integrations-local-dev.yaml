@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mock-integrations-local-dev
+  title: Mocks — integrações (dev local)
+  description: >-
+    Mocks e stubs para desenvolvimento local sem dependências corporativas
+    obrigatórias.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

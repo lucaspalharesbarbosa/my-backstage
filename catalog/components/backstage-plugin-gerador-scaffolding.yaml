@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-plugin-gerador-scaffolding
+  title: Backstage plugin — Gerador de Scaffolding
+  description: >-
+    Pacote npm publicado no Nexus — páginas, rotas e cliente HTTP do plugin
+    no Backstage.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

@@ -1,0 +1,14 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sonarqube-integration-bridge
+  title: SonarQube integration bridge
+  description: >-
+    Ponte entre o worker de validação e o SonarQube corporativo (relatórios,
+    quality gate e feedback ao processo).
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

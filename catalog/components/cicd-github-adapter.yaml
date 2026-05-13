@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cicd-github-adapter
+  title: CI/CD — adaptador GitHub (MVP)
+  description: >-
+    Adaptador GitHub (MVP) com OIDC para disparar esteiras e publicar artefatos.
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding

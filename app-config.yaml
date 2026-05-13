@@ -267,6 +267,124 @@ catalog:
       rules:
         - allow: [Resource]
 
+    # Components — Gerador (one Component per file under catalog/components/)
+    - type: file
+      target: ../../catalog/components/template-service.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/validation-worker.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/metadata-worker.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/git-publish-worker.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/backstage-plugin-gerador-scaffolding.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/admin-panel-web.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/super-rag-client.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/zeebe-client-integration.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/cicd-github-adapter.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/cicd-gitlab-adapter.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/cross-repo-update-automation.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/golden-image-pipeline-ti.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/nexus-publish-pipeline-plugin.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/backstage-deploy-pipeline.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/devcontainer-gerador-scaffolding.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/openapi-template-service.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/terraform-eks-gerador.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/terraform-datastores-gerador.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/irsa-secrets-config.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/k8s-helm-charts-gerador.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/catalog-info-templates-repo.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/e2e-tests-gerador-scaffolding.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/contract-tests-gerador-scaffolding.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/performance-tests-template-service.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/container-image-scan-config.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/sbom-pipeline-gerador.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/backstage-catalog-registrar.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/mock-integrations-local-dev.yaml
+      rules:
+        - allow: [Component]
+    - type: file
+      target: ../../catalog/components/sonarqube-integration-bridge.yaml
+      rules:
+        - allow: [Component]
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

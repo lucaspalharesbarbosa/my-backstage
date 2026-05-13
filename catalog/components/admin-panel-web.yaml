@@ -1,0 +1,13 @@
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: admin-panel-web
+  title: Admin Panel (web)
+  description: >-
+    SPA React/Vite — painel administrativo servido via S3 e CloudFront.
+spec:
+  type: website
+  lifecycle: production
+  owner: group:default/squad-gerador-scaffolding
+  system: system:default/gerador-scaffolding
