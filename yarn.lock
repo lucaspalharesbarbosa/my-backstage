@@ -2590,6 +2590,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/frontend-dev-utils@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@backstage/frontend-dev-utils@npm:0.1.1"
+  dependencies:
+    "@backstage/frontend-defaults": "npm:^0.5.1"
+    "@backstage/frontend-plugin-api": "npm:^0.16.0"
+    "@backstage/plugin-app": "npm:^0.4.3"
+    "@backstage/ui": "npm:^0.14.0"
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+    react-router-dom: ^6.30.2
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/3d6f528511aafd1b5b0465daa68829a318f6eec262498a3f3d27207703d9b1e74a650d1ebc6f076c8bfaa169574d311bceedfea0f5965117b6c20d0dd06fd667
+  languageName: node
+  linkType: hard
+
 "@backstage/frontend-plugin-api@npm:^0.16.0, @backstage/frontend-plugin-api@npm:^0.16.2":
   version: 0.16.2
   resolution: "@backstage/frontend-plugin-api@npm:0.16.2"
@@ -5527,6 +5547,28 @@ __metadata:
   checksum: 10c0/82951cb7f3762dd78cca2ea291396841e3f4adfe26004b5badfed1cec4b6a04bb567dff94d0e41b35c61bdd7957317c64c22f58074d14b238d44e44d9e420019
   languageName: node
   linkType: hard
+
+"@internal/backstage-plugin-world-clock-plugin@workspace:^, @internal/backstage-plugin-world-clock-plugin@workspace:plugins/world-clock-plugin":
+  version: 0.0.0-use.local
+  resolution: "@internal/backstage-plugin-world-clock-plugin@workspace:plugins/world-clock-plugin"
+  dependencies:
+    "@backstage/cli": "npm:^0.36.1"
+    "@backstage/core-components": "npm:^0.18.9"
+    "@backstage/frontend-defaults": "npm:^0.5.1"
+    "@backstage/frontend-dev-utils": "npm:^0.1.1"
+    "@backstage/frontend-plugin-api": "npm:^0.16.0"
+    "@backstage/frontend-test-utils": "npm:^0.5.2"
+    "@backstage/theme": "npm:^0.7.3"
+    "@backstage/ui": "npm:^0.14.0"
+    "@material-ui/icons": "npm:^4.9.1"
+    "@testing-library/jest-dom": "npm:^6.0.0"
+    "@testing-library/react": "npm:^14.0.0"
+    "@testing-library/user-event": "npm:^14.0.0"
+    react: "npm:^16.13.1 || ^17.0.0 || ^18.0.0"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
 
 "@internationalized/date@npm:^3.12.1":
   version: 3.12.1
@@ -13159,6 +13201,7 @@ __metadata:
     "@backstage/plugin-techdocs-module-addons-contrib": "npm:^1.1.35"
     "@backstage/plugin-user-settings": "npm:^0.9.2"
     "@backstage/ui": "npm:^0.14.0"
+    "@internal/backstage-plugin-world-clock-plugin": "workspace:^"
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@playwright/test": "npm:^1.32.3"
@@ -27414,7 +27457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.0.2":
+"react@npm:^16.13.1 || ^17.0.0 || ^18.0.0, react@npm:^18.0.2":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:
