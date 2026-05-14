@@ -1,0 +1,19 @@
+# Config mínima: nó único + segurança + TLS em HTTP e transporte (mesmo par de chaves em dev).
+cluster.name: backstage-search-local
+node.name: es01
+network.host: 0.0.0.0
+discovery.type: single-node
+
+xpack.security.enabled: true
+
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: certs/http.key
+xpack.security.http.ssl.certificate: certs/http.crt
+
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.key: certs/http.key
+xpack.security.transport.ssl.certificate: certs/http.crt
+xpack.security.transport.ssl.verification_mode: certificate
+
+# Evita download opcional de GeoIP no primeiro start (ruído/latência em dev).
+ingest.geoip.downloader.enabled: false

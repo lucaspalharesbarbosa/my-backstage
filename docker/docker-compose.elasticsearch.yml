@@ -1,0 +1,46 @@
+# Elasticsearch 7.17 local para desenvolvimento (Backstage 1.50.x).
+# Uso: gerar certificados (scripts/generate-elasticsearch-local-certs.ps1),
+# Ajuste senha em elasticsearch/compose.env (primeiro up “grava” o bootstrap),
+# depois: docker compose -f docker-compose.elasticsearch.yml up -d
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.25
+    container_name: backstage-elasticsearch-7
+    hostname: elasticsearch
+    environment:
+      # Memória JVM: 512m é um bom equilíbrio em laptop; aumente se indexar muito catálogo.
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      # ELASTIC_PASSWORD vem de env_file (não coloque senha neste YAML).
+    env_file:
+      - elasticsearch/compose.env
+    ulimits:
+      # Evita falhas de alocação de memória mapeada em Linux; no Docker Desktop (Windows)
+      # costuma ser ignorado ou aceito — se o container não subir, comente este bloco.
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      # API HTTP(S) que o Backstage e o curl usam.
+      - "127.0.0.1:9200:9200"
+    volumes:
+      # Substitui o elasticsearch.yml padrão: precisamos declarar single-node + TLS explicitamente.
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      # Certificados gerados no host (PEM) — curl usa o mesmo http.crt como CA (--cacert).
+      - ./elasticsearch/certs:/usr/share/elasticsearch/config/certs:ro
+      # Volume nomeado: dados sobrevivem a `docker compose down` sem -v (útil para reindexações).
+      - esdata:/usr/share/elasticsearch/data
+    healthcheck:
+      # -k só no healthcheck interno para não duplicar senha/CA no compose; do host use --cacert.
+      test:
+        [
+          "CMD-SHELL",
+          "curl -sfk -u elastic:$$ELASTIC_PASSWORD https://127.0.0.1:9200/_cluster/health?wait_for_status=yellow&timeout=5s || exit 1",
+        ]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+volumes:
+  esdata:

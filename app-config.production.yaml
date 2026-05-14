@@ -75,3 +75,14 @@ catalog:
       target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-seguranca-observabilidade/blob/main/locations/github-locations.yaml
       rules:
         - allow: [Domain, System, Component, API, Resource, Location]
+
+# Busca via Elasticsearch (variáveis no ambiente do runtime / secrets do deploy).
+search:
+  elasticsearch:
+    node: ${ELASTICSEARCH_NODE}
+    auth:
+      username: ${ELASTICSEARCH_USERNAME}
+      password: ${ELASTICSEARCH_PASSWORD}
+    clientOptions:
+      ssl:
+        rejectUnauthorized: true
