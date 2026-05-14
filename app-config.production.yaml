@@ -53,3 +53,25 @@ catalog:
       target: ./examples/org.yaml
       rules:
         - allow: [User, Group]
+
+    # Catálogo no GitHub (mesmas locations que app-config.yaml; requer GITHUB_TOKEN com leitura nos repos)
+    - type: url
+      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-identities/blob/main/locations/github-locations.yaml
+      rules:
+        - allow: [User, Group, Location]
+    - type: url
+      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-idp/blob/main/locations/github-locations.yaml
+      rules:
+        - allow: [Domain, System, Component, API, Resource, Location]
+    - type: url
+      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-ia-corporativa/blob/main/locations/github-locations.yaml
+      rules:
+        - allow: [Domain, System, Component, API, Resource, Location]
+    - type: url
+      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-digital-engenharia/blob/main/locations/github-locations.yaml
+      rules:
+        - allow: [Domain, System, Component, API, Resource, Location]
+    - type: url
+      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-seguranca-observabilidade/blob/main/locations/github-locations.yaml
+      rules:
+        - allow: [Domain, System, Component, API, Resource, Location]
