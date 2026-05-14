@@ -118,6 +118,20 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location, Domain, User, Group]
+  # Catálogo via GitHub Discovery: qualquer repo do owner que tenha
+  # locations/github-locations.yaml na branch main entra no catálogo (sem regex em repository).
+  # Para limitar escopo sem regex: use filters.topic no GitHub (ex.: topic "backstage-catalog").
+  # https://backstage.io/docs/integrations/github/discovery/
+  providers:
+    github:
+      backstageGitHubCatalog:
+        organization: lucaspalharesbarbosa
+        catalogPath: /locations/github-locations.yaml
+        filters:
+          branch: main
+        schedule:
+          frequency: { minutes: 30 }
+          timeout: { minutes: 3 }
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -134,28 +148,6 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
-
-    # Catálogo no GitHub (um Location raiz por repositório → locations/github-locations.yaml)
-    - type: url
-      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-identities/blob/main/locations/github-locations.yaml
-      rules:
-        - allow: [User, Group, Location]
-    - type: url
-      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-idp/blob/main/locations/github-locations.yaml
-      rules:
-        - allow: [Domain, System, Component, API, Resource, Location]
-    - type: url
-      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-ia-corporativa/blob/main/locations/github-locations.yaml
-      rules:
-        - allow: [Domain, System, Component, API, Resource, Location]
-    - type: url
-      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-digital-engenharia/blob/main/locations/github-locations.yaml
-      rules:
-        - allow: [Domain, System, Component, API, Resource, Location]
-    - type: url
-      target: https://github.com/lucaspalharesbarbosa/backstage-catalog-domain-claro-seguranca-observabilidade/blob/main/locations/github-locations.yaml
-      rules:
-        - allow: [Domain, System, Component, API, Resource, Location]
 
     ## Uncomment these lines to add more example data
     # - type: url
