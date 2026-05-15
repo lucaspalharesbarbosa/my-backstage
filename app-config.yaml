@@ -126,12 +126,13 @@ catalog:
     github:
       backstageGitHubCatalog:
         organization: lucaspalharesbarbosa
-        catalogPath: /locations/github-locations.yaml
+        catalogPath: catalog-info.yaml
         filters:
           branch: main
         schedule:
-          frequency: { minutes: 30 }
+          frequency: { minutes: 5 }
           timeout: { minutes: 3 }
+      
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
