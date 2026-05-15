@@ -66,7 +66,7 @@ catalog:
         schedule:
           frequency: { minutes: 5 }
           timeout: { minutes: 3 }
-          
+
   locations:
     # Local example data, replace this with your production config, these are intended for demo use only.
     # File locations are relative to the backend process, typically in a deployed context, such as in a Docker container, this will be the root
@@ -95,3 +95,31 @@ search:
     clientOptions:
       ssl:
         rejectUnauthorized: true
+    indexTemplates:
+      - name: backstage-search-partial
+        body:
+          index_patterns:
+            - '*-index__*'   # padrão dos índices do Backstage (ex.: software-catalog-index__173...)
+          template:
+            settings:
+              analysis:
+                analyzer:
+                  backstage_partial:
+                    tokenizer: backstage_edge_ngram
+                    filter: [lowercase]
+                  backstage_partial_search:
+                    tokenizer: lowercase
+                tokenizer:
+                  backstage_edge_ngram:
+                    type: edge_ngram
+                    min_gram: 2
+                    max_gram: 20
+                    token_chars: [letter, digit]
+            mappings:
+              dynamic_templates:
+                - strings_as_partial_text:
+                    match_mapping_type: string
+                    mapping:
+                      type: text
+                      analyzer: backstage_partial
+                      search_analyzer: backstage_partial_search

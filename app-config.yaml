@@ -200,6 +200,34 @@ search:
     clientOptions:
       ssl:
         rejectUnauthorized: false
+    indexTemplates:
+      - name: backstage-search-partial
+        body:
+          index_patterns:
+            - '*-index__*'   # padrão dos índices do Backstage (ex.: software-catalog-index__173...)
+          template:
+            settings:
+              analysis:
+                analyzer:
+                  backstage_partial:
+                    tokenizer: backstage_edge_ngram
+                    filter: [lowercase]
+                  backstage_partial_search:
+                    tokenizer: lowercase
+                tokenizer:
+                  backstage_edge_ngram:
+                    type: edge_ngram
+                    min_gram: 2
+                    max_gram: 20
+                    token_chars: [letter, digit]
+            mappings:
+              dynamic_templates:
+                - strings_as_partial_text:
+                    match_mapping_type: string
+                    mapping:
+                      type: text
+                      analyzer: backstage_partial
+                      search_analyzer: backstage_partial_search
 
 # see https://backstage.io/docs/ai/mcp-actions for more details
 mcpActions:
