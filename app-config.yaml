@@ -132,7 +132,16 @@ catalog:
         schedule:
           frequency: { minutes: 5 }
           timeout: { minutes: 3 }
-      
+          
+      eduluccaGitHubCatalog:
+        organization: edulucca
+        catalogPath: catalog-info.yaml
+        filters:
+          branch: master
+        schedule:
+          frequency: { minutes: 5 }
+          timeout: { minutes: 3 }
+
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
