@@ -132,12 +132,21 @@ catalog:
         schedule:
           frequency: { minutes: 5 }
           timeout: { minutes: 3 }
-          
+
       eduluccaGitHubCatalog:
         organization: edulucca
         catalogPath: catalog-info.yaml
         filters:
           branch: master
+        schedule:
+          frequency: { minutes: 5 }
+          timeout: { minutes: 3 }
+
+      igorGitHubCatalog:
+        organization: Nexus-Evolution-Tech
+        catalogPath: catalog-info.yaml
+        filters:
+          branch: main
         schedule:
           frequency: { minutes: 5 }
           timeout: { minutes: 3 }
