@@ -54,6 +54,7 @@ catalog:
         catalogPath: catalog-info.yaml
         filters:
           branch: master
+          repository: '.*'
         schedule:
           frequency: { minutes: 5 }
           timeout: { minutes: 3 }
@@ -63,6 +64,15 @@ catalog:
         catalogPath: catalog-info.yaml
         filters:
           branch: main
+        schedule:
+          frequency: { minutes: 5 }
+          timeout: { minutes: 3 }
+
+      emanuelGitHubCatalog:
+        organization: emanueldeveloper82
+        catalogPath: catalog-info.yaml
+        filters:
+          repositoryVisible: all
         schedule:
           frequency: { minutes: 5 }
           timeout: { minutes: 3 }
